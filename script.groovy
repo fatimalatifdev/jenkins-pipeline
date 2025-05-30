@@ -29,7 +29,7 @@ def Deploy(){
     //     sh "ssh -o StrictHostKeyChecking=no ${env.SERVER_USER}@${env.SERVER_IP} '${cd};${dockerCmd}'"  // running commands on remote server, you can add more commands here seperating them with semicolon
         
     // }
-    bat 'docker run -d --name ${env.APP_NAME} -p 5000:3000 ${env.REPO_NAME}:${env.TAG}'
+    bat "docker run -d --name ${env.APP_NAME} -p 5000:3000 ${env.REPO_NAME}:${env.TAG}"
 }
 
 return this
