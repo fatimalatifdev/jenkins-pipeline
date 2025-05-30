@@ -11,6 +11,17 @@ environment {
 }
 
     stages{
+
+       stage("Cleanup") {
+            steps {
+                script {
+                    echo "Cleaning up workspace and old resources..."
+                    bat 'docker-compose down --rmi all --volumes'
+
+                }
+            }
+        }
+
         stage("init"){
             steps{
                 script{
