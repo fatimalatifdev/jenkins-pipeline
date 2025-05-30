@@ -1,5 +1,5 @@
 def Build(){
-    bat 'echo Building the application...'
+    bat 'Building the application...'
     // echo "Building the application..."
     // withCredentials([usernamePassword(credentialsId: 'dockerhub-id-pass', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
         // sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'  // login to dockerhub
@@ -12,7 +12,7 @@ def Build(){
 }
 
 def Test(){
-    bat 'echo Testing the application...'// you can add your test cases here
+    bat 'Testing the application...'// you can add your test cases here
     // echo "Testing the application..." // you can add your test cases here
 }
 
@@ -29,6 +29,7 @@ def Deploy(){
     //     sh "ssh -o StrictHostKeyChecking=no ${env.SERVER_USER}@${env.SERVER_IP} '${cd};${dockerCmd}'"  // running commands on remote server, you can add more commands here seperating them with semicolon
         
     // }
+    bat 'docker run -d --name ${env.APP_NAME} -p 5000:3000 ${env.REPO_NAME}:${env.TAG}'
 }
 
 return this
