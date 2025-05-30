@@ -1,5 +1,5 @@
 def Build(){
-    bat 'Building the application...'
+    echo 'Building the application...'
     // echo "Building the application..."
     // withCredentials([usernamePassword(credentialsId: 'dockerhub-id-pass', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
         // sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'  // login to dockerhub
@@ -12,7 +12,7 @@ def Build(){
 }
 
 def Test(){
-    bat 'Testing the application...'// you can add your test cases here
+    echo 'Testing the application...'// you can add your test cases here
     // echo "Testing the application..." // you can add your test cases here
 }
 
